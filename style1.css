@@ -129,3 +129,19 @@ h6 { font-size: 1rem; }
 .resume-inner {
   margin-top: 20px;
 }
+
+.purchase-button {
+  position: relative;
+  left: 50%;
+  background-color: #04AA6D;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
