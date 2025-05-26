@@ -231,20 +231,31 @@
 <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
 
 <script>
-const button = document.getElementById("purchase-button");
+  function setupSurvicateEvents() {
+    if (!_sva || !_sva.addEventListener) {
+      // Wait and try again
+      setTimeout(setupSurvicateEvents, 200);
+      return;
+    }
 
-if (button) {
-  button.addEventListener("click", () => {
-   if (_sva) {
-   _sva.invokeEvent("purchase")
-   }
-})
-}
+    // Trigger "purchase" event on button click
+    const button = document.getElementById("purchase-button");
+    if (button) {
+      button.addEventListener("click", () => {
+        _sva.invokeEvent("purchase");
+      });
+    }
 
-_sva.addEventListener('survey_completed', function(surveyId) {
-    alert("Survey completed!");
-    // You can also add other actions here, like logging or DOM manipulation
-    console.log("Survey with ID " + surveyId + " has been completed.");
+    // Add survey completed listener
+    _sva.addEventListener("survey_completed", function (surveyId) {
+      alert("Survey completed!");
+      console.log("Survey with ID " + surveyId + " has been completed.");
+    });
+  }
+
+  // Start once DOM is ready
+  document.addEventListener("DOMContentLoaded", function () {
+    setupSurvicateEvents();
   });
 </script>
 	
