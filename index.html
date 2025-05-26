@@ -240,6 +240,12 @@ if (button) {
    }
 })
 }
+
+_sva.addEventListener('survey_completed', function(surveyId) {
+    alert("Survey completed!");
+    // You can also add other actions here, like logging or DOM manipulation
+    console.log("Survey with ID " + surveyId + " has been completed.");
+  });
 </script>
 	
 </body>
