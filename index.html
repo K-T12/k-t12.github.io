@@ -231,12 +231,6 @@
 <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
 
 <script>
-  function setupSurvicateEvents() {
-    if (!_sva || !_sva.addEventListener) {
-      // Wait and try again
-      setTimeout(setupSurvicateEvents, 200);
-      return;
-    }
 
     // Trigger "purchase" event on button click
     const button = document.getElementById("purchase-button");
@@ -245,18 +239,6 @@
         _sva.invokeEvent("purchase");
       });
     }
-
-    // Add survey completed listener
-    _sva.addEventListener("survey_completed", function (surveyId) {
-      alert("Survey completed!");
-      console.log("Survey with ID " + surveyId + " has been completed.");
-    });
-  }
-
-  // Start once DOM is ready
-  document.addEventListener("DOMContentLoaded", function () {
-    setupSurvicateEvents();
-  });
 </script>
 	
 </body>
