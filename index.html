@@ -202,7 +202,7 @@
       </div>
     </div>
   </div>
-<div id="survey-container">Loading...</div>
+  <div id="survey-container">Loading...</div>
 </section>
 
 <!-- JS for debugging -->
@@ -231,22 +231,10 @@
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
 
+<!-- Survicate Embed via Iframely -->
 <script>
 function setupSurvicateEvents() {
-    if (!_sva || !_sva.addEventListener) {
-      // Wait and try again
-      setTimeout(setupSurvicateEvents, 200);
-      return;
-    }
-
-    // Trigger "purchase" event on button click
-    const button = document.getElementById("purchase-button");
-    if (button) {
-      button.addEventListener("click", () => {
-        _sva.invokeEvent("purchase");
-      });
-    }
-
+  // Load embed
   fetch('https://iframe.ly/api/oembed?url=https%3A%2F%2Fsurvey.survicate.com%2Fc575db68f30dd431%2F%3Fp%3Danonymous&api_key=6f044d1a11e1ec40333dfe')
     .then(response => response.json())
     .then(data => {
@@ -256,6 +244,18 @@ function setupSurvicateEvents() {
       console.error('Embedding failed:', error);
     });
 
+  // Optional: If you're also using the Survicate Web SDK and want to attach listeners
+  if (typeof _sva !== 'undefined' && _sva.addEventListener) {
+    _sva.addEventListener('survey_completed', function (surveyId) {
+      alert("Survey completed!");
+      console.log("Survey with ID " + surveyId + " has been completed.");
+    });
+  } else {
+    console.log("Survicate SDK (_sva) not available yet.");
+  }
+}
+
+document.addEventListener("DOMContentLoaded", setupSurvicateEvents);
 </script>
 	
 </body>
