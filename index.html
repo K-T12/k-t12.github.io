@@ -202,6 +202,7 @@
       </div>
     </div>
   </div>
+<div id="survey-container">Loading...</div>
 </section>
 
 <!-- JS for debugging -->
@@ -246,17 +247,15 @@ function setupSurvicateEvents() {
       });
     }
 
-    // Add survey completed listener
-    _sva.addEventListener("survey_completed", function (surveyId) {
-      alert("Survey completed!");
-      console.log("Survey with ID " + surveyId + " has been completed.");
+  fetch('https://iframe.ly/api/oembed?url=https%3A%2F%2Fsurvey.survicate.com%2Fc575db68f30dd431%2F%3Fp%3Danonymous&api_key=6f044d1a11e1ec40333dfe')
+    .then(response => response.json())
+    .then(data => {
+      document.getElementById('survey-container').innerHTML = data.html;
+    })
+    .catch(error => {
+      console.error('Embedding failed:', error);
     });
-  }
 
-  // Start once DOM is ready
-  document.addEventListener("DOMContentLoaded", function () {
-    setupSurvicateEvents();
-  });
 </script>
 	
 </body>
