@@ -55,19 +55,20 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     var e = document.getElementsByTagName('script')[0];
     e.parentNode.insertBefore(s, e);
   })(window);
-
-	document.addEventListener("DOMContentLoaded", function () {
-  document.getElementById("purchase-button").addEventListener("click", function () {
-    if (typeof _sva !== "undefined") {
-      _sva.invokeEvent("button_clicked");
-    } else {
-      console.warn("Survicate SDK not ready.");
-    }
-  });
-});
-	
 </script>
 <!-- End of Survicate code -->
+
+<!-- Button event — place this just before </body> -->
+<script>
+  document.getElementById("purchase-button").addEventListener("click", function () {
+    if (window._sva && typeof window._sva.invokeEvent === "function") {
+      window._sva.invokeEvent("button_clicked");
+    } else {
+      console.warn("Survicate SDK not ready or invokeEvent unavailable.");
+    }
+  });
+</script>
+
 
 
   <title>Przerada Resume</title>
