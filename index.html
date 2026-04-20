@@ -82,13 +82,18 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 	<!-- Button event -->
 <script>
-  document.getElementById("purchase-button").addEventListener("click", function () {
+ document.getElementById("purchase-button").addEventListener("click", function () {
+  var attempts = 0;
+  var interval = setInterval(function () {
     if (window._sva && typeof window._sva.invokeEvent === "function") {
+      clearInterval(interval);
       window._sva.invokeEvent("button_clicked");
-    } else {
-      console.warn("Survicate SDK not ready or invokeEvent unavailable.");
+    } else if (attempts++ > 10) {
+      clearInterval(interval);
+      console.warn("Survicate SDK did not load in time.");
     }
-  });
+  }, 300);
+});
 </script>
 </head>
 
