@@ -42,20 +42,15 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
 <!-- Start of Survicate (www.survicate.com) code -->
 <script type="text/javascript">
-  (function(opts) {
-    opts.traits = {
-      "user_id": "12345",
-      "email": "user@example.com",
-      "name": "John Doe",
-      "subscription_status": "Premium",
-      "signed_up": "2024-01-15"
-    };
-  })(window._sva = window._sva || {});
-
   (function (w) {
     var s = document.createElement('script');
     s.src = 'https://survey.survicate.com/workspaces/34f2c3802ca8b64eb2820a35a71b36b2/web_surveys.js';
     s.async = true;
+    s.onload = function () {
+      _sva.setResponseTraits([
+        { name: "user_id", value: "summer-2024"},
+      ]);
+    };
     var e = document.getElementsByTagName('script')[0];
     e.parentNode.insertBefore(s, e);
   })(window);
