@@ -58,18 +58,6 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 </script>
 <!-- End of Survicate code -->
 
-<!-- Button event — place this just before </body> -->
-<script>
-  document.getElementById("purchase-button").addEventListener("click", function () {
-    if (window._sva && typeof window._sva.invokeEvent === "function") {
-      window._sva.invokeEvent("button_clicked");
-    } else {
-      console.warn("Survicate SDK not ready or invokeEvent unavailable.");
-    }
-  });
-</script>
-
-
 
   <title>Przerada Resume</title>
 
@@ -91,6 +79,17 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style1.css">
+
+	<!-- Button event -->
+<script>
+  document.getElementById("purchase-button").addEventListener("click", function () {
+    if (window._sva && typeof window._sva.invokeEvent === "function") {
+      window._sva.invokeEvent("button_clicked");
+    } else {
+      console.warn("Survicate SDK not ready or invokeEvent unavailable.");
+    }
+  });
+</script>
 </head>
 
 <body id="top-header">
