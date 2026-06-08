@@ -33,7 +33,7 @@
 	</script> -->
 
 	<!-- Google Tag Manager -->
- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
 new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
 j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
@@ -41,7 +41,7 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 <!-- End Google Tag Manager -->
 
 <!-- Start of Survicate (www.survicate.com) code -->
-<!-- <script type="text/javascript">
+ <script type="text/javascript">
   (function (w) {
     var s = document.createElement('script');
     s.src = 'https://survey.survicate.com/workspaces/67811ba7dec72ebf798868f348d8fb8e/web_surveys.js';
@@ -94,6 +94,8 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   }, 300);
 });
 </script>
+	
+	
 </head>
 
 <body id="top-header">
@@ -198,6 +200,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+
 <!-- Interests -->
 <section class="section bg-grey" id="interests">
   <div class="container">
@@ -214,6 +217,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
+
+	<!-- Survey Button -->
+    <div style="text-align: center; margin-top: 30px;">
+      <button id="surveyButton" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Take Survey</button>
+    </div>
+  </div>
+
 </section>
 
 <!-- Skills -->
@@ -246,6 +256,10 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
+	
+	 <button id="surveyButton">Take Survey</button>
+
+
 <!-- Contact -->
 <section class="section bg-grey" id="contact">
   <div class="container">
@@ -273,6 +287,23 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <!-- JS for debugging -->
+
+<script>
+
+	// Handle survey button click
+document.getElementById('surveyButton').addEventListener('click', function() {
+	const firstName = "Marek"
+	const lastName = "P"
+	const email = "marek.p@gmail.com"
+		
+	const surveyUrl = `https://survey.survicate.com/c575db68f30dd431/?&first_name=${firstName}&last_name=${lastName}&email=${email}`;
+
+	// Open survey in new tab
+  window.open(surveyUrl, '_blank');
+});
+</script>
+
+	
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     console.log("DOM fully loaded and parsed");
