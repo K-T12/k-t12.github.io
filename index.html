@@ -5,61 +5,28 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	
-	<!-- Google Analitics (gtag.js) -->
+	<!-- Google Analytics (gtag.js) -->
 	<script async src="https://www.googletagmanager.com/gtag/js?id=G-EEB6JP2F1D"></script>
 	<script>
   		window.dataLayer = window.dataLayer || [];
   		function gtag(){dataLayer.push(arguments);}
   		gtag('js', new Date());
-
   		gtag('config', 'G-EEB6JP2F1D');
 	</script>
-	
-	<!-- Segment
-	<script>
-  !function(){var i="analytics",analytics=window[i]=window[i]||[];if(!analytics.initialize)if(analytics.invoked)window.console&&console.error&&console.error("Segment snippet included twice.");else{analytics.invoked=!0;analytics.methods=["trackSubmit","trackClick","trackLink","trackForm","pageview","identify","reset","group","track","ready","alias","debug","page","screen","once","off","on","addSourceMiddleware","addIntegrationMiddleware","setAnonymousId","addDestinationMiddleware","register"];analytics.factory=function(e){return function(){if(window[i].initialized)return window[i][e].apply(window[i],arguments);var n=Array.prototype.slice.call(arguments);if(["track","screen","alias","group","page","identify"].indexOf(e)>-1){var c=document.querySelector("link[rel='canonical']");n.push({__t:"bpc",c:c&&c.getAttribute("href")||void 0,p:location.pathname,u:location.href,s:location.search,t:document.title,r:document.referrer})}n.unshift(e);analytics.push(n);return analytics}};for(var n=0;n<analytics.methods.length;n++){var key=analytics.methods[n];analytics[key]=analytics.factory(key)}analytics.load=function(key,n){var t=document.createElement("script");t.type="text/javascript";t.async=!0;t.setAttribute("data-global-segment-analytics-key",i);t.src="https://cdn.segment.com/analytics.js/v1/" + key + "/analytics.min.js";var r=document.getElementsByTagName("script")[0];r.parentNode.insertBefore(t,r);analytics._loadOptions=n};analytics._writeKey="grfV2tlBGKJqYye6yAUH8fVNJIrT3GB8";;analytics.SNIPPET_VERSION="5.2.0";
-  analytics.load("grfV2tlBGKJqYye6yAUH8fVNJIrT3GB8");
-  analytics.page();
-  }}();
-</script> Segment -->
 
-		<!-- attributes
-	<script>
-	_sva.setVisitorTraits({
-  "email": "kasia.p@survi.com",
-  "first_name": "Kasia",
-  "last_name": "P",
-});
-	</script> -->
-
-	<!-- Google Tag Manager -->
-<!-- <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-})(window,document,'script','dataLayer','GTM-5F9ZK7XB');</script>
-<!-- End Google Tag Manager -->
-
-<!-- Start of Survicate (www.survicate.com) code -->
- <script type="text/javascript">
-  (function (w) {
-    var s = document.createElement('script');
-    s.src = 'https://survey.survicate.com/workspaces/67811ba7dec72ebf798868f348d8fb8e/web_surveys.js';
-    s.async = true;
-    s.onload = function () {
-      _sva.setResponseTraits([
-        { name: "user_id", value: "summer-2024"},
-      ]);
-    };
-    var e = document.getElementsByTagName('script')[0];
-    e.parentNode.insertBefore(s, e);
-  })(window);
-</script>
-<!-- End of Survicate code -->
-
+	<!-- Start of Survicate (www.survicate.com) code -->
+	<script type="text/javascript">
+	  (function (w) {
+	    var s = document.createElement('script');
+	    s.src = 'https://survey.survicate.com/workspaces/67811ba7dec72ebf798868f348d8fb8e/web_surveys.js';
+	    s.async = true;
+	    var e = document.getElementsByTagName('script')[0];
+	    e.parentNode.insertBefore(s, e);
+	  })(window);
+	</script>
+	<!-- End of Survicate code -->
 
   <title>Przerada Resume</title>
-
 
   <!-- Icon-->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
@@ -78,32 +45,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
 
   <!-- Main Stylesheet -->
   <link rel="stylesheet" href="style1.css">
-
-	<!-- Button event -->
-<script>
- document.getElementById("purchase-button").addEventListener("click", function () {
-  var attempts = 0;
-  var interval = setInterval(function () {
-    if (window._sva && typeof window._sva.invokeEvent === "function") {
-      clearInterval(interval);
-      window._sva.invokeEvent("button_clicked");
-    } else if (attempts++ > 10) {
-      clearInterval(interval);
-      console.warn("Survicate SDK did not load in time.");
-    }
-  }, 300);
-});
-</script>
-	
 	
 </head>
 
 <body id="top-header">
-
-<!-- Google Tag Manager (noscript) -->
-<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5F9ZK7XB"
-height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-<!-- End Google Tag Manager (noscript) -->
 	
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg fixed-top">
@@ -140,7 +85,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-<button id="purchase-button" class="purchase-button"> Purchase </button>
+<button id="purchase-button" class="purchase-button">Purchase</button>
 
 <!-- Education -->
 <section class="section" id="edu">
@@ -171,7 +116,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </section>
 
 <div class="container">
-<iframe src="https://survey.survicate.com/8a1b76b2b4d339fa/?p=anonymous" width="900px" height="500px"></iframe>
+  <iframe src="https://survey.survicate.com/8a1b76b2b4d339fa/?p=anonymous" width="900px" height="500px"></iframe>
 </div>
 
 <!-- Work -->
@@ -200,7 +145,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   </div>
 </section>
 
-
 <!-- Interests -->
 <section class="section bg-grey" id="interests">
   <div class="container">
@@ -217,13 +161,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
-
-	<!-- Survey Button -->
-    <div style="text-align: center; margin-top: 30px;">
-      <button id="surveyButton" style="padding: 10px 20px; font-size: 16px; cursor: pointer;">Take Survey</button>
-    </div>
-  </div>
-
 </section>
 
 <!-- Skills -->
@@ -231,7 +168,6 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="container">
     <h2 class="text-lg mb-4">Skills</h2>
     <div class="resume-inner">
-      <!-- Example Skill -->
       <h4>Python</h4>
       <div class="progress"><div class="progress-bar" style="width: 40%"></div></div>
       <h4>JavaScript</h4>
@@ -253,12 +189,13 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       <h4>LaTeX</h4>
       <div class="progress"><div class="progress-bar" style="width: 75%"></div></div>
     </div>
+
+    <!-- Survey Button -->
+    <div style="text-align: center; margin-top: 40px;">
+      <button id="surveyButton" style="padding: 12px 30px; font-size: 16px; cursor: pointer; background-color: #007bff; color: white; border: none; border-radius: 5px; font-weight: bold;">Take Survey</button>
+    </div>
   </div>
 </section>
-
-	
-	 <button id="surveyButton">Take Survey</button>
-
 
 <!-- Contact -->
 <section class="section bg-grey" id="contact">
@@ -283,78 +220,93 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
     </div>
   </div>
-  <div id="survey-container">Loading...</div>
 </section>
 
-<!-- JS for debugging -->
-
+<!-- Survey Button Event Handler -->
 <script>
+document.addEventListener('DOMContentLoaded', function() {
+  // Function to get user data
+  function getUserData() {
+    return {
+      firstName: "Katarzyna",
+      lastName: "Przerada",
+      email: "kasia.przerada12@gmail.com"
+    };
+  }
 
-	// Handle survey button click
-document.getElementById('surveyButton').addEventListener('click', function() {
-	const firstName = "Marek"
-	const lastName = "P"
-	const email = "marek.p@gmail.com"
-		
-	const surveyUrl = `https://survey.survicate.com/c575db68f30dd431/?&first_name=${firstName}&last_name=${lastName}&email=${email}`;
+  // Handle survey button click
+  const surveyButton = document.getElementById('surveyButton');
+  if (surveyButton) {
+    surveyButton.addEventListener('click', function() {
+      const userData = getUserData();
+      
+      // Build URL with proper encoding using URLSearchParams
+      const surveyUrl = new URL('https://survey.survicate.com/c575db68f30dd431/');
+      surveyUrl.searchParams.append('first_name', userData.firstName);
+      surveyUrl.searchParams.append('last_name', userData.lastName);
+      surveyUrl.searchParams.append('email', userData.email);
+      
+      // Open survey in new tab
+      window.open(surveyUrl.toString(), '_blank');
+    });
+  }
 
-	// Open survey in new tab
-  window.open(surveyUrl, '_blank');
+  // Optional: Also set visitor traits in Survicate SDK
+  if (typeof _sva !== 'undefined' && typeof _sva.setVisitorTraits === 'function') {
+    const userData = getUserData();
+    _sva.setVisitorTraits({
+      "first_name": userData.firstName,
+      "last_name": userData.lastName,
+      "email": userData.email
+    });
+  }
 });
 </script>
 
-	
+<!-- Purchase Button Event Handler -->
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
-    console.log("DOM fully loaded and parsed");
+document.getElementById("purchase-button").addEventListener("click", function () {
+  var attempts = 0;
+  var interval = setInterval(function () {
+    if (window._sva && typeof window._sva.invokeEvent === "function") {
+      clearInterval(interval);
+      window._sva.invokeEvent("button_clicked");
+    } else if (attempts++ > 10) {
+      clearInterval(interval);
+      console.warn("Survicate SDK did not load in time.");
+    }
+  }, 300);
+});
+</script>
 
-    const sections = ["home", "edu", "work", "interests", "skills", "contact"];
-    sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el) {
-        console.log(`✅ Section #${id} is present.`);
-      } else {
-        console.warn(`❌ Section #${id} is MISSING.`);
-      }
-    });
+<!-- Debug Console -->
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  console.log("✅ DOM fully loaded and parsed");
 
-    const navLinks = document.querySelectorAll('.nav-link');
-    navLinks.forEach(link => {
-      console.log(`Nav link detected: ${link.textContent.trim()} → ${link.getAttribute('href')}`);
-    });
+  const sections = ["home", "edu", "work", "interests", "skills", "contact"];
+  sections.forEach(id => {
+    const el = document.getElementById(id);
+    if (el) {
+      console.log(`✅ Section #${id} is present.`);
+    } else {
+      console.warn(`❌ Section #${id} is MISSING.`);
+    }
   });
+
+  const navLinks = document.querySelectorAll('.nav-link');
+  navLinks.forEach(link => {
+    console.log(`Nav link detected: ${link.textContent.trim()} → ${link.getAttribute('href')}`);
+  });
+
+  console.log("✅ Survicate button initialized");
+});
 </script>
 
 <!-- Scripts -->
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
 
-<!-- Survicate Embed via Iframely -->
-<script>
-function setupSurvicateEvents() {
-  // Load embed
-  fetch('https://iframe.ly/api/oembed?url=https%3A%2F%2Fsurvey.survicate.com%2Fc575db68f30dd431%2F%3Fp%3Danonymous&api_key=6f044d1a11e1ec40333dfe')
-    .then(response => response.json())
-    .then(data => {
-      document.getElementById('survey-container').innerHTML = data.html;
-    })
-    .catch(error => {
-      console.error('Embedding failed:', error);
-    });
-
-  // Optional: If you're also using the Survicate Web SDK and want to attach listeners
-  if (typeof _sva !== 'undefined' && _sva.addEventListener) {
-    _sva.addEventListener('survey_completed', function (surveyId) {
-      alert("Survey completed!");
-      console.log("Survey with ID " + surveyId + " has been completed.");
-    });
-  } else {
-    console.log("Survicate SDK (_sva) not available yet.");
-  }
-}
-
-document.addEventListener("DOMContentLoaded", setupSurvicateEvents);
-</script>
-	
 </body>
+
 </html>
