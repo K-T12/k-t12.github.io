@@ -316,6 +316,28 @@ document.addEventListener("DOMContentLoaded", function () {
 <script src="plugins/jquery/jquery.min.js"></script>
 <script src="plugins/bootstrap/js/bootstrap.min.js"></script>
 
+<!--  salesforce chat  -->
+<script type='text/javascript'>
+	function initEmbeddedMessaging() {
+		try {
+			embeddedservice_bootstrap.settings.language = 'en_US'; // For example, enter 'en' or 'en-US'
+
+			embeddedservice_bootstrap.init(
+				'00D0900000Dwc0C',
+				'Kasia',
+				'https://survicate4-dev-ed.develop.my.site.com/ESWKasia1789559493226',
+				{
+					scrt2URL: 'https://survicate4-dev-ed.develop.my.salesforce-scrt.com'
+				}
+			);
+		} catch (err) {
+			console.error('Error loading Embedded Messaging: ', err);
+		}
+	};
+</script>
+<script type='text/javascript' src='https://survicate4-dev-ed.develop.my.site.com/ESWKasia1789559493226/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
+
+
 </body>
 
 </html>
