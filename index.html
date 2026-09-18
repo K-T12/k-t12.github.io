@@ -19,9 +19,9 @@
   (function (opts) {
     opts.traits = Object.assign({}, opts.traits, {
       user_id: "kasia123",
-    first_name: "Katarzyna",
-    last_name: "Przerada",
-    email: "kasia.przerada12@gmail.com"
+      first_name: "Katarzyna",
+      last_name: "Przerada",
+      email: "kasia.przerada12@gmail.com"
     });
   })(window._sva);
 </script>
@@ -110,7 +110,7 @@
     <div class="row">
       <div class="col-lg-5">
         <div class="resume-preview">
-          <img src="https://images.photowall.com/products/58243/galaxy-1.jpg?w=698&h=698&q=85" alt="Artist's rendering of the eight planets of our solar system">
+          <img src="https://assets.science.nasa.gov/content/dam/science/psd/solar/2023/09/o/OSS2-1.jpg" alt="Artist's rendering of the eight planets of our solar system">
         </div>
         <p class="image-credit">Credit: NASA/JPL</p>
       </div>
@@ -205,7 +205,7 @@
 
     <div class="container" style="padding: 0; margin-top: 2rem;">
       <p class="text-muted-label">Tell us what you'd like to see through the lens next</p>
-      <iframe src="https://survey.survicate.com/8a1b76b2b4d339fa/??user-id=${encodeURIComponent(user_id)}" width="100%" height="500px" style="border:1px solid rgba(217,168,78,0.22); border-radius:6px; max-width:900px; display:block;"></iframe>
+      <iframe id="surveyIframe" src="https://survey.survicate.com/8a1b76b2b4d339fa/?p=anonymous" width="100%" height="500px" style="border:1px solid rgba(217,168,78,0.22); border-radius:6px; max-width:900px; display:block;"></iframe>
     </div>
 
     <!-- Survey Button -->
@@ -239,6 +239,22 @@
     </div>
   </div>
 </section>
+
+<!-- Set the embedded survey iframe's URL dynamically with real attribute values -->
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const iframe = document.getElementById('surveyIframe');
+  if (iframe && window._sva && window._sva.traits) {
+    const traits = window._sva.traits;
+    const params = new URLSearchParams({ p: 'anonymous' });
+    if (traits.user_id) params.set('user-id', traits.user_id);
+    if (traits.first_name) params.set('first-name', traits.first_name);
+    if (traits.last_name) params.set('last-name', traits.last_name);
+    if (traits.email) params.set('email', traits.email);
+    iframe.src = `https://survey.survicate.com/8a1b76b2b4d339fa/?${params.toString()}`;
+  }
+});
+</script>
 
 <!-- Survey Button Event Handler -->
 <script>
