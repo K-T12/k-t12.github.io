@@ -337,7 +337,23 @@ document.addEventListener("DOMContentLoaded", function () {
 </script>
 <script type='text/javascript' src='https://survicate4-dev-ed.develop.my.site.com/ESWtestKasia21789635571334/assets/js/bootstrap.min.js' onload='initEmbeddedMessaging()'></script>
 
+<!-- Trigger Survicate survey automatically when the Salesforce chat conversation is closed -->
+<script type="text/javascript">
+window.addEventListener("onEmbeddedMessagingConversationClosed", function (event) {
+  console.log("Salesforce chat conversation closed — attempting to trigger Survicate survey.");
 
+  var attempts = 0;
+  var interval = setInterval(function () {
+    if (window._sva && typeof window._sva.invokeEvent === "function") {
+      clearInterval(interval);
+      window._sva.invokeEvent("salesforce_chat_ended");
+    } else if (attempts++ > 10) {
+      clearInterval(interval);
+      console.warn("Survicate SDK did not load in time to trigger post-chat survey.");
+    }
+  }, 300);
+});
+</script>
 
 </body>
 
