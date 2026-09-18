@@ -149,6 +149,13 @@ p, a, li { color: var(--muted); }
   margin-bottom: 8px;
 }
 
+.image-credit {
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-style: italic;
+  margin-top: 8px;
+}
+
 .text-muted-label {
   color: var(--muted);
   font-size: 0.9rem;
